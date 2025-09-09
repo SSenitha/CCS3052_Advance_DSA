@@ -3,7 +3,7 @@
 This repository contains the **Advanced Data Structures and Algorithms (ADSA)** in-class project (2025).  
 The project focuses on implementing and comparing shortest path algorithms using Sri Lankan cities as test cases.  
 
----
+
 
 ## 🎯 Project Objectives  
 The main goals of this project are:  
@@ -12,7 +12,7 @@ The main goals of this project are:
 3. Implement **at least three different shortest path algorithms**  
 4. Display the **entire distance matrix** and/or **visualize the results** for better understanding.  
 
----
+
 
 ## 🗂 Features  
 - Distance matrix representation of Sri Lankan cities  
