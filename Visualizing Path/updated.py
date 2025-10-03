@@ -1,3 +1,7 @@
+# -----------------------
+# If installed the dependencies on a virtual env, run: .\.venv\Scripts\activate to activate it and swithch to the venv interpreter
+# To run: cd "Visualizing Path" --> streamlit run updated.py
+# -----------------------
 import streamlit as st
 import pandas as pd
 import numpy as np
