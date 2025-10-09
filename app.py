@@ -326,22 +326,25 @@ def main():
         df = load_data()
         sparse_matrix = build_sparse_matrix(df)
     
-    st.success(f"✅ Loaded {len(df)} cities and built road network")
+    #st.success(f"✅ Loaded {len(df)} cities and built road network")
     
     # Sidebar for controls
     st.sidebar.header("Configuration")
     
     # City selection
-    city_names = df['name_en'].tolist()
+    city_names = sorted(df['name_en'].tolist())
     start_city = st.sidebar.selectbox("Select Start City", city_names, index=0)
     end_city = st.sidebar.selectbox("Select End City", city_names, index=min(1, len(city_names)-1))
     
     # Algorithm selection
-    algorithms = st.sidebar.multiselect(
-        "Select Algorithms to Compare",
-        ["Dijkstra", "Bellman-Ford", "A*"],
-        default=["Dijkstra", "A*"]
-    )
+    st.sidebar.subheader("Select Algorithms to Compare")
+    algorithms = []
+    if st.sidebar.checkbox("Dijkstra", value=True):
+        algorithms.append("Dijkstra")
+    if st.sidebar.checkbox("Bellman-Ford", value=False):
+        algorithms.append("Bellman-Ford")
+    if st.sidebar.checkbox("A*", value=True):
+        algorithms.append("A*")
     
     # Map visualization options
     show_map = st.sidebar.checkbox("Show Interactive Map", value=True)
